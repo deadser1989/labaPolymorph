@@ -140,6 +140,7 @@
     <ClInclude Include="double.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="integer.h" />
+    <ClInclude Include="integer_impl.h" />
     <ClInclude Include="typeinfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

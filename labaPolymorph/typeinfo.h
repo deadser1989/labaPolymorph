@@ -13,5 +13,10 @@ typedef struct typeInfo{
 	binaryOperator add;
 	binaryOperator multiply;
 	binaryOperator substract;
+	assignment assign;
+	swapElements swap;
+	getSize size;
+	print print;
+	destroy destroy;
 
 } TypeInfo; 
