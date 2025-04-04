@@ -30,6 +30,12 @@
     <ClCompile Include="input.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="error.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.c">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="complex.h">

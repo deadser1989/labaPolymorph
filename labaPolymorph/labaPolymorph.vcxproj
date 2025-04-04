@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClCompile Include="complex.c" />
     <ClCompile Include="double.c" />
+    <ClCompile Include="error.c" />
     <ClCompile Include="input.c" />
     <ClCompile Include="integer.c" />
+    <ClCompile Include="matrix.c" />
     <ClCompile Include="typeInfo.c" />
   </ItemGroup>
   <ItemGroup>
