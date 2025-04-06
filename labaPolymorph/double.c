@@ -37,7 +37,7 @@ void freeDouble(void* ptr) {
 }
 
 const TypeInfo* getTypeInfoDouble(void) {
-	static const TypeInfo integerTypeInfo = {
+	static const TypeInfo doubleTypeInfo = {
 		.add = doubleAdd,
 		.multiply = doubleMultiply,
 		.substract = doubleSubstract,
@@ -47,5 +47,5 @@ const TypeInfo* getTypeInfoDouble(void) {
 		.print = doublePrint,
 		.destroy = freeDouble,
 	};
-	return &integerTypeInfo;
+	return &doubleTypeInfo;
 }
