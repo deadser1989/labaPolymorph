@@ -59,5 +59,8 @@
     <ClInclude Include="double_impl.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
+    <ClInclude Include="complex_impl.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

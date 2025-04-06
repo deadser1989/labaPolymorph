@@ -29,10 +29,10 @@ size_t doubleGetSize(void) {
 }
 
 void doublePrint(const void* element) {
-	printf("%lf", *(const double*)element);
+	printf("%g", *(const double*)element);
 }
 
-void freeDouble(void* ptr) {
+void freeDouble(void* ptr) { 
 	free(ptr);
 }
 

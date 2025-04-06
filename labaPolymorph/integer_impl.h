@@ -11,3 +11,4 @@ size_t intGetSize(void);
 void intPrint(const void* element);
 void freeInteger(void* ptr);
 
+const TypeInfo* getTypeInfoInteger(void);

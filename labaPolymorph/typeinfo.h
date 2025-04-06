@@ -1,6 +1,12 @@
 #pragma once 
 #include <stdlib.h>
 
+typedef enum isSuccess
+{
+	ERROR,
+	SUCCESS
+} isSuccess;
+
 typedef void (*binaryOperator)(const void* a, const void* b, void* result);
 typedef void (*assignment)(void* destination,const void* source);
 typedef size_t(*getSize)();
