@@ -6,7 +6,7 @@ void intAdd(const void* a, const void* b, void* res) {
 }
 
 void intMultiply(const void* a, const void* b, void* res) {
-	*(int*)res = (*(const int*)a + *(const int*)b);
+	*(int*)res = (*(const int*)a) * (*(const int*)b);
 }
 
 void intSubstract(const void* a, const void* b, void* res) {
@@ -45,7 +45,7 @@ const TypeInfo* getTypeInfoInteger(void) {
 		.swap = intSwap,
 		.size = intGetSize,
 		.print = intPrint,
-		.destroy = freeInteger
+		.destroy = freeInteger,
 	};
 	return &integerTypeInfo;
 }

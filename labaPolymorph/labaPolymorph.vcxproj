@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="complex.h" />
     <ClInclude Include="double.h" />
+    <ClInclude Include="double_impl.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="integer.h" />
     <ClInclude Include="integer_impl.h" />
