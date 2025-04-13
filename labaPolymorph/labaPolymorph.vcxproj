@@ -133,7 +133,6 @@
     <ClCompile Include="input.c" />
     <ClCompile Include="integer.c" />
     <ClCompile Include="matrix.c" />
-    <ClCompile Include="typeInfo.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="complex.h" />

@@ -24,9 +24,6 @@
     <ClCompile Include="complex.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="typeInfo.c">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="input.c">
       <Filter>src</Filter>
     </ClCompile>

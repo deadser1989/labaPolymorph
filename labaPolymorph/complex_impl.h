@@ -12,6 +12,6 @@ void complexMultiply(const void* a, const void* b, void* res);
 void complexAssign(void* destination, const void* source);
 void complexSwap(void* element1, void* element2);
 size_t complexGetSize(void);
-void complexPrint(const void* element);
+void complexPrint(const void* a);
 void freeComplex(void* ptr);
 isSuccess readComplex(void* destination);

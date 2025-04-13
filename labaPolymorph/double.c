@@ -36,6 +36,31 @@ void freeDouble(void* ptr) {
 	free(ptr);
 }
 
+isSuccess doubleRead(void* destination) {
+	char* input = NULL;
+	size_t inputSize = 0;
+	double value;
+
+	if (getline(&input, &inputSize, stdin) == -1 || input == NULL) {
+		printf("Error: Invalid input\n");
+		free(input);
+		return ERROR;
+	}
+
+	char* endPtr;
+	value = strtod(input, &endPtr);
+
+	if (*endPtr != '\n' && *endPtr != '\0') {
+		printf("Error: Please enter a valid floating-point number.\n");
+		free(input);
+		return ERROR;
+	}
+
+	*(double*)destination = value;
+	free(input);
+	return SUCCESS;
+}
+
 const TypeInfo* getTypeInfoDouble(void) {
 	static const TypeInfo doubleTypeInfo = {
 		.add = doubleAdd,
@@ -46,6 +71,7 @@ const TypeInfo* getTypeInfoDouble(void) {
 		.size = doubleGetSize,
 		.print = doublePrint,
 		.destroy = freeDouble,
+		.input = doubleRead
 	};
 	return &doubleTypeInfo;
 }

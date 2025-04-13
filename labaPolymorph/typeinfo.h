@@ -13,7 +13,7 @@ typedef size_t(*getSize)();
 typedef void (*print)(const void* element);
 typedef void (*destroy)(void* element);
 typedef void (*swapElements)(void* element1, void* element2);
-
+typedef isSuccess(*input)(void* destination);
 
 typedef struct typeInfo{
 	binaryOperator add;
@@ -24,5 +24,5 @@ typedef struct typeInfo{
 	getSize size;
 	print print;
 	destroy destroy;
-
+	input input;
 } TypeInfo; 
