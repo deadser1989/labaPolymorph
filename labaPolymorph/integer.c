@@ -1,4 +1,6 @@
 #include "integer_impl.h"
+#include "integer.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

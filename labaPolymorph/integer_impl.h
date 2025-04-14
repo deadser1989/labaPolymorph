@@ -13,5 +13,3 @@ void intPrint(const void* element);
 void freeInteger(void* ptr);
 
 isSuccess intRead(void* destination);
-
-const TypeInfo* getTypeInfoInteger(void);

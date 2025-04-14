@@ -1,4 +1,6 @@
 #include "double_impl.h"
+#include "double.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

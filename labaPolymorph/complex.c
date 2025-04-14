@@ -1,4 +1,6 @@
 #include "complex_impl.h"
+#include "complex.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -72,8 +74,8 @@ void freeComplex(void* ptr) {
 }
 
 void clearInputBuffer() {
-	int c;
-	while ((c = getchar()) != '\n' && c != EOF) {}
+	int characterFromInput;
+	while ((characterFromInput = getchar()) != '\n' && characterFromInput != EOF) {}
 }
 
 isSuccess readComplex(void* destination)

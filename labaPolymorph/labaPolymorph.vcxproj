@@ -132,6 +132,7 @@
     <ClCompile Include="error.c" />
     <ClCompile Include="input.c" />
     <ClCompile Include="integer.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="matrix.c" />
   </ItemGroup>
   <ItemGroup>
