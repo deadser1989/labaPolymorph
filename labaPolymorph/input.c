@@ -17,14 +17,15 @@ unsigned int getPositiveDimension(const char* prompt) {
         printf("%s", prompt);
 
         if (getline(&inputLine, &bufferSize, stdin) == -1) {
-            perror("Error: Failed to read input");
+            printf("Error: Failed to read input. Please try again.\n");
             free(inputLine);
-            exit(EXIT_FAILURE);
+            inputLine = NULL;
+            continue;
         }
 
         if (inputLine == NULL) {
             fprintf(stderr, "Unexpected null input.\n");
-            exit(EXIT_FAILURE);
+            continue;
         }
 
         char* endPtr;
@@ -40,6 +41,7 @@ unsigned int getPositiveDimension(const char* prompt) {
             value = (unsigned int)tempValue;
             validInput = 1;
         }
+
     } while (!validInput);
 
     free(inputLine);
