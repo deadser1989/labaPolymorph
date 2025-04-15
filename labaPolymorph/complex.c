@@ -95,6 +95,8 @@ isSuccess readComplex(void* destination)
 	value->real = tempReal;
 	value->imag = tempImag;
 
+	clearInputBuffer(); // очистка от мусора
+
 	return SUCCESS;
 }
 

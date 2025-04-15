@@ -9,7 +9,7 @@ void clearInputBuffer(void) {
     }
 }
 
-unsigned int getPositiveDimension(const char* prompt) {
+unsigned int getPositiveDimension(char* prompt) {
     char* inputLine = NULL;
     size_t bufferSize = 0;
     unsigned int value = 0;
@@ -19,7 +19,7 @@ unsigned int getPositiveDimension(const char* prompt) {
         printf("%s", prompt);
 
         if (getline(&inputLine, &bufferSize, stdin) == -1) {
-            printf("Error: Failed to read input. Please try again.\n");
+            printf("Error: Failed to read input. Try again.\n");
             free(inputLine);
             inputLine = NULL;
             continue;
