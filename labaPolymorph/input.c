@@ -53,14 +53,11 @@ unsigned int getPositiveDimension(const char* prompt) {
 unsigned int getOperationChoice(int min, int max) {
     unsigned int choice;
     do {
-        // Просто просим ввести выбор, без указания диапазона
         choice = getPositiveDimension("Enter your choice: ");
-
-        // Проверяем, что число в пределах от min до max
         if (choice < min || choice > max) {
             printf("Error: Please choose a number between %d and %d.\n", min, max);
         }
-    } while (choice < min || choice > max); // Повторяем до тех пор, пока число не в пределах диапазона
+    } while (choice < min || choice > max); 
 
     return choice;
 }
