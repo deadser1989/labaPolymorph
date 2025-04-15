@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 void intAdd(const void* a, const void* b, void* res) {
-    *(int*)res = (*(const int*)a + *(const int*)b);
+    *(int*)res = (*(const int*)a + *(const int*)b); //значение на которое указывает res
 }
 
 void intMultiply(const void* a, const void* b, void* res) {
@@ -39,25 +39,29 @@ void freeInteger(void* ptr) {
 }
 
 isSuccess intRead(void* destination) {
-    char input[256]; // Массив фиксированного размера для ввода
+    char* input = NULL;
+    size_t inputSize = 0;
     int valueHolder;
 
-    printf("Enter an integer: ");
-    if (fgets(input, sizeof(input), stdin) == NULL) {
+    if (getline(&input, &inputSize, stdin) == -1 || input == NULL) {
         printf("Error: Invalid input\n");
+        free(input);
         return ERROR;
     }
 
     char* endPtr;
     valueHolder = (int)strtol(input, &endPtr, 10);
 
-    // Проверка на успешное преобразование
     if (*endPtr != '\n' && *endPtr != '\0') {
         printf("Error: Please enter a valid integer number.\n");
+        free(input);
         return ERROR;
     }
 
     *(int*)destination = valueHolder;
+
+    free(input);
+
     return SUCCESS;
 }
 
@@ -71,7 +75,7 @@ const TypeInfo* getTypeInfoInteger(void) {
         .size = intGetSize,
         .print = intPrint,
         .destroy = freeInteger,
-        .input = intRead,
+        .input = intRead, 
     };
     return &integerTypeInfo;
 }

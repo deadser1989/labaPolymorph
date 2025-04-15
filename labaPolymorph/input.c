@@ -1,4 +1,6 @@
 #include "input.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void clearInputBuffer(void) {
     int inputChar;
@@ -47,6 +49,22 @@ unsigned int getPositiveDimension(const char* prompt) {
     free(inputLine);
     return value;
 }
+
+unsigned int getOperationChoice(int min, int max) {
+    unsigned int choice;
+    do {
+        // Просто просим ввести выбор, без указания диапазона
+        choice = getPositiveDimension("Enter your choice: ");
+
+        // Проверяем, что число в пределах от min до max
+        if (choice < min || choice > max) {
+            printf("Error: Please choose a number between %d and %d.\n", min, max);
+        }
+    } while (choice < min || choice > max); // Повторяем до тех пор, пока число не в пределах диапазона
+
+    return choice;
+}
+
 
 void inputMatrixDimensions(unsigned int* rows, unsigned int* cols) {
     *rows = getPositiveDimension("Enter the number of rows for the matrix: ");
