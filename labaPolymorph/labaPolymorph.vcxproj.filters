@@ -62,5 +62,11 @@
     <ClInclude Include="complex_impl.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

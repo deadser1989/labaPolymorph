@@ -7,7 +7,8 @@
 void complexAdd(const void* a, const void* b, void* res) {
 	complex* complexRes = (complex*)res;
 	const complex* complexA = (const complex*)a;
-	const complex* complexB = (const complex*)b;   
+	const complex* complexB = (const complex*)b;
+
 	complexRes->real = complexA->real + complexB->real;
 	complexRes->imag = complexA->imag + complexB->imag;
 }
@@ -16,6 +17,7 @@ void complexSubstract(const void* a, const void* b, void* res) {
 	complex* complexRes = (complex*)res;
 	const complex* complexA = (const complex*)a;
 	const complex* complexB = (const complex*)b;
+
 	complexRes->real = complexA->real - complexB->real;
 	complexRes->imag = complexA->imag - complexB->imag;
 }
@@ -24,6 +26,7 @@ void complexMultiply(const void* a, const void* b, void* res) {
 	complex* complexRes = (complex*)res;
 	const complex* complexA = (const complex*)a;
 	const complex* complexB = (const complex*)b;
+
 	complexRes->real = (complexA->real * complexB->real) - (complexA->imag * complexB->imag);
 	complexRes->imag = (complexA->real * complexB->imag) + (complexA->imag * complexB->real);
 }
@@ -32,6 +35,7 @@ void complexMultiply(const void* a, const void* b, void* res) {
 void complexAssign(void* destination, const void* source) {
 	complex* complexDestination = (complex*)destination;
 	const complex* complexSource = (const complex*)source;
+
 	complexDestination->real = complexSource->real;
 	complexDestination->imag = complexSource->imag;
 }

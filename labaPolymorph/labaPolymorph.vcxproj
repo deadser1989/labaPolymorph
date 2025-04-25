@@ -140,9 +140,11 @@
     <ClInclude Include="complex_impl.h" />
     <ClInclude Include="double.h" />
     <ClInclude Include="double_impl.h" />
+    <ClInclude Include="error.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="integer.h" />
     <ClInclude Include="integer_impl.h" />
+    <ClInclude Include="matrix.h" />
     <ClInclude Include="typeinfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
