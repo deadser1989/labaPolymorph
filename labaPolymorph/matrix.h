@@ -3,7 +3,7 @@
 #include "typeInfo.h"
 #include "error.h"
 
-typedef struct Matrix {
+typedef struct matrix {
     unsigned int rows;
     unsigned int cols;
     void* data;

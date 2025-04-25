@@ -34,8 +34,8 @@ void doublePrint(const void* element) {
 	printf("%g", *(const double*)element);
 }
 
-void freeDouble(void* ptr) { 
-	free(ptr);
+void freeDouble(void* ptr) {
+	(void)ptr;
 }
 
 isSuccess doubleRead(void* destination) {

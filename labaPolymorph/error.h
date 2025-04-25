@@ -11,7 +11,7 @@ typedef enum {
     ERROR_TYPE_MISMATCH,
     ERROR_INCOMPATIBLE_MULTIPLICATION,
     ERROR_INVALID_ROW_OPERATION
-}ErrorCode;
+} ErrorCode;
 
 ErrorCode isNullMatrix(const Matrix* matrix);
 ErrorCode areMatricesSameSize(const Matrix* matrix1, const Matrix* matrix2);
