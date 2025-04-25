@@ -35,7 +35,7 @@ void intPrint(const void* element) {
 }
 
 void freeInteger(void* ptr) {
-    free(ptr);
+    (void)ptr;
 }
 
 isSuccess intRead(void* destination) {

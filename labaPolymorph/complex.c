@@ -74,7 +74,7 @@ void complexPrint(const void* a)
 }
 
 void freeComplex(void* ptr) {
-	free(ptr);
+	(void)ptr;
 }
 
 void clearInputBuffer() {

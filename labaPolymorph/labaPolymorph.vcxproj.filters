@@ -68,5 +68,8 @@
     <ClInclude Include="matrix.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="error_codes.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
