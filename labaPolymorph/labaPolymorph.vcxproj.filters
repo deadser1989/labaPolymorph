@@ -36,6 +36,9 @@
     <ClCompile Include="main.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="ui.c">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="complex.h">
@@ -68,7 +71,7 @@
     <ClInclude Include="matrix.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="error_codes.h">
+    <ClInclude Include="ui.h">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>

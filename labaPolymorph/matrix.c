@@ -46,7 +46,7 @@ ErrorCode readMatrixComponents(Matrix* matrix) {
         for (unsigned int j = 0; j < matrix->cols; j++) {
             void* element = (char*)matrix->data + (i * matrix->cols + j) * matrix->typeInfo->size();
             if (matrix->typeInfo->input(element) != SUCCESS)
-                return ERROR;
+                return ERROR_NULL_DATA;
         }
     }
     return ERROR_NONE;
@@ -82,7 +82,7 @@ ErrorCode readMatrixElement(Matrix* matrix, unsigned int row, unsigned int col) 
         return ERROR_INVALID_ROW_OPERATION;
 
     void* element = (char*)matrix->data + (row * matrix->cols + col) * matrix->typeInfo->size();
-    return matrix->typeInfo->input(element) == SUCCESS ? ERROR_NONE : ERROR;
+    return matrix->typeInfo->input(element) == SUCCESS ? ERROR_NONE : ERROR_NULL_DATA;
 }
 
 ErrorCode addMatrix(const Matrix* matrix1, const Matrix* matrix2, Matrix* result) {

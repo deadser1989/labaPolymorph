@@ -1,3 +1,5 @@
+
+#define _CRT_SECURE_NO_WARNINGS
 #include "complex_impl.h"
 #include "complex.h"
 
@@ -77,7 +79,7 @@ void freeComplex(void* ptr) {
 	(void)ptr;
 }
 
-void clearInputBuffer() {
+static void clearInputBuffer() {
 	int characterFromInput;
 	while ((characterFromInput = getchar()) != '\n' && characterFromInput != EOF) {}
 }

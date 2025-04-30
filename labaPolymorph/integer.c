@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include "integer_impl.h"
 #include "integer.h"
 

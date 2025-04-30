@@ -1,3 +1,5 @@
+
+#include "matrix.h"
 #include "error.h"
 #include <stdio.h>
 

@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include "input.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,11 +6,11 @@
 void clearInputBuffer(void) {
     int inputChar;
     while ((inputChar = getchar()) != '\n' && inputChar != EOF) {
-        // Просто очищаем буфер до конца строки или EOF
+        // Просто очищаем буфер до конца строки
     }
 }
 
-unsigned int getPositiveDimension(char* prompt) {
+unsigned int getPositiveDimension(const char* prompt) {
     char* inputLine = NULL;
     size_t bufferSize = 0;
     unsigned int value = 0;
@@ -50,7 +51,7 @@ unsigned int getPositiveDimension(char* prompt) {
     return value;
 }
 
-unsigned int getOperationChoice(int min, int max) {
+unsigned int getOperationChoice(unsigned min, unsigned max) {
     unsigned int choice;
     do {
         choice = getPositiveDimension("Enter your choice: ");

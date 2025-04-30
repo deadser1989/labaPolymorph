@@ -1,6 +1,6 @@
 #pragma once
 
-#include "matrix.h"
+typedef struct Matrix Matrix;  
 
 typedef enum {
     ERROR_NONE,
@@ -20,3 +20,4 @@ ErrorCode haveMatchingTypes(const Matrix* matrix1, const Matrix* matrix2);
 ErrorCode isValidRowOperation(const Matrix* matrix, unsigned int targetRow, const unsigned int* sourceRows, unsigned int sourceCount);
 
 const char* getErrorMessage(ErrorCode code);
+

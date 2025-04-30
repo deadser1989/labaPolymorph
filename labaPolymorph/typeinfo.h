@@ -1,28 +1,27 @@
-#pragma once 
+#pragma once
 #include <stdlib.h>
 
-typedef enum isSuccess
-{
-	ERROR,
-	SUCCESS
+typedef enum isSuccess {
+    ERROR,
+    SUCCESS
 } isSuccess;
 
 typedef void (*binaryOperator)(const void* a, const void* b, void* result);
-typedef void (*assignment)(void* destination,const void* source);
+typedef void (*assignment)(void* destination, const void* source);
 typedef size_t(*getSize)();
 typedef void (*print)(const void* element);
 typedef void (*destroy)(void* element);
 typedef void (*swapElements)(void* element1, void* element2);
 typedef isSuccess(*input)(void* destination);
 
-typedef struct typeInfo{
-	binaryOperator add;
-	binaryOperator multiply;
-	binaryOperator substract;
-	assignment assign;
-	swapElements swap;
-	getSize size;
-	print print;
-	destroy destroy;
-	input input;
-} TypeInfo; 
+typedef struct typeInfo {
+    binaryOperator add;
+    binaryOperator multiply;
+    binaryOperator substract;
+    assignment assign;
+    swapElements swap;
+    getSize size;
+    print print;
+    destroy destroy;
+    input input;
+} TypeInfo;
