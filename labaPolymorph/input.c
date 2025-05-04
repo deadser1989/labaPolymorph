@@ -5,66 +5,47 @@
 
 void clearInputBuffer(void) {
     int inputChar;
-    while ((inputChar = getchar()) != '\n' && inputChar != EOF) {
-        // Просто очищаем буфер до конца строки
-    }
+    while ((inputChar = getchar()) != '\n' && inputChar != EOF) {}
 }
 
-unsigned int getPositiveDimension(const char* prompt) {
-    char* inputLine = NULL;
-    size_t bufferSize = 0;
-    unsigned int value = 0;
+int getOperationChoice(const char* prompt, int min, int max) {
+    int value;
     int validInput = 0;
 
     do {
         printf("%s", prompt);
-
-        if (getline(&inputLine, &bufferSize, stdin) == -1) {
-            printf("Error: Failed to read input. Try again.\n");
-            free(inputLine);
-            inputLine = NULL;
+        if (scanf("%d", &value) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            clearInputBuffer();
             continue;
         }
 
-        if (inputLine == NULL) {
-            fprintf(stderr, "Unexpected null input.\n");
-            continue;
-        }
-
-        char* endPtr;
-        long tempValue = strtol(inputLine, &endPtr, 10);
-
-        if (*endPtr != '\n' && *endPtr != '\0') {
-            printf("Invalid input: Please enter a valid number.\n");
-        }
-        else if (tempValue <= 0) {
-            printf("Error: Value must be greater than zero.\n");
+        if (value < min || value > max) {
+            printf("Error: Value must be between %d and %d.\n", min, max);
         }
         else {
-            value = (unsigned int)tempValue;
             validInput = 1;
         }
 
+        clearInputBuffer();
     } while (!validInput);
 
-    free(inputLine);
     return value;
 }
 
-unsigned int getOperationChoice(unsigned min, unsigned max) {
-    unsigned int choice;
-    do {
-        choice = getPositiveDimension("Enter your choice: ");
-        if (choice < min || choice > max) {
-            printf("Error: Please choose a number between %d and %d.\n", min, max);
-        }
-    } while (choice < min || choice > max); 
-
-    return choice;
-}
-
-
 void inputMatrixDimensions(unsigned int* rows, unsigned int* cols) {
-    *rows = getPositiveDimension("Enter the number of rows for the matrix: ");
-    *cols = getPositiveDimension("Enter the number of columns for the matrix: ");
+    *rows = 0;
+    *cols = 0;
+
+    while (*rows <= 0) {
+        printf("Enter the number of rows: ");
+        scanf("%u", rows);
+        clearInputBuffer();
+    }
+
+    while (*cols <= 0) {
+        printf("Enter the number of columns: ");
+        scanf("%u", cols);
+        clearInputBuffer();
+    }
 }

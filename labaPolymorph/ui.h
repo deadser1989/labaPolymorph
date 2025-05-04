@@ -1,12 +1,11 @@
 #pragma once
 #include "matrix.h"
 #include "error.h"
+#include "input.h"
 
-void printMainMenu();
-int getOperationChoice(int min, int max);
-void handleMatrixAddition();
-void handleMatrixMultiplication();
-void handleMatrixTransposition();
-void inputMatrixDimensions(unsigned int* rows, unsigned int* cols);
+void printMainMenu(void);
+void handleMatrixAddition(void);
+void handleMatrixMultiplication(void);
+void handleMatrixTransposition(void);
 void determineMatrixType(Matrix* matrix);
 int readMatrixWithRetry(Matrix* matrix, const char* name);
