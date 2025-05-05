@@ -134,6 +134,7 @@
     <ClCompile Include="integer.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="matrix.c" />
+    <ClCompile Include="test_matrix.c" />
     <ClCompile Include="ui.c" />
   </ItemGroup>
   <ItemGroup>

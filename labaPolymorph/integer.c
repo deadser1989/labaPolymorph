@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 void intAdd(const void* a, const void* b, void* res) {
-    *(int*)res = (*(const int*)a + *(const int*)b); //значение на которое указывает res
+    *(int*)res = (*(const int*)a + *(const int*)b); 
 }
 
 void intMultiply(const void* a, const void* b, void* res) {

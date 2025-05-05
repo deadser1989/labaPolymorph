@@ -1,0 +1,44 @@
+:project:
+  :build_root: build
+  :test_file_prefix: test_
+
+:paths:
+  :test: .
+  :source: .
+  :include: 
+    - .
+    - vendor/unity/src
+  :support: .
+
+:files:
+  :source:
+    :exclude: 
+      - test_*.c
+      - unity.c
+  :test:
+    :exclude:
+      - matrix.c
+      - integer.c
+      - double.c
+      - complex.c
+
+:tools:
+  :test_compiler:
+    :executable: gcc
+    :arguments:
+      - -Wall
+      - -Wextra
+      - -std=c11
+      - -g
+      - -I.
+      - -Ivendor/unity/src
+      - -fprofile-arcs
+      - -ftest-coverage
+    :ldflags: -lm
+
+:coverage:
+  :enabled: true
+  :output: coverage_report
+  :exclude:
+    - test_*.c
+    - vendor/*
