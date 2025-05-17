@@ -1,4 +1,5 @@
 #define _POSIX_C_SOURCE 200809L
+#include "error.h"
 #include "input.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,19 +34,47 @@ int getOperationChoice(const char* prompt, int min, int max) {
     return value;
 }
 
-void inputMatrixDimensions(unsigned int* rows, unsigned int* cols) {
-    *rows = 0;
-    *cols = 0;
+ErrorCode inputMatrixDimensions(unsigned int* rows, unsigned int* cols) {
+    int input;
+    int scanfResult;
 
-    while (*rows <= 0) {
-        printf("Enter the number of rows: ");
-        scanf("%u", rows);
-        clearInputBuffer();
-    }
+    do {
+        printf("Enter the number of rows (must be > 0): ");
+        scanfResult = scanf("%d", &input);
+        clearInputBuffer(); 
 
-    while (*cols <= 0) {
-        printf("Enter the number of columns: ");
-        scanf("%u", cols);
+        if (scanfResult != 1) {
+            printf("Invalid input. Please enter a positive integer.\n");
+            continue;
+        }
+
+        if (input <= 0) {
+            printf("Number must be greater than 0.\n");
+            continue;
+        }
+
+        *rows = (unsigned int)input;
+        break;
+    } while (1);
+
+    do {
+        printf("Enter the number of columns (must be > 0): ");
+        scanfResult = scanf("%d", &input);
         clearInputBuffer();
-    }
+
+        if (scanfResult != 1) {
+            printf("Invalid input. Please enter a positive integer.\n");
+            continue;
+        }
+
+        if (input <= 0) {
+            printf("Number must be greater than 0.\n");
+            continue;
+        }
+
+        *cols = (unsigned int)input;
+        break;
+    } while (1);
+
+    return ERROR_NONE;
 }

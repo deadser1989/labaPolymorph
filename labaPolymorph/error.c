@@ -42,14 +42,15 @@ ErrorCode isValidRowOperation(const Matrix* matrix, unsigned int targetRow, cons
 
 const char* getErrorMessage(ErrorCode code) {
     switch (code) {
-    case ERROR_NONE: return "No error.";
-    case ERROR_NULL_MATRIX: return "Matrix pointer is null.";
-    case ERROR_NULL_DATA: return "Matrix data is null.";
-    case ERROR_NULL_TYPEINFO: return "Matrix typeInfo is null.";
-    case ERROR_SIZE_MISMATCH: return "Matrix sizes do not match.";
-    case ERROR_TYPE_MISMATCH: return "Matrix types do not match.";
-    case ERROR_INCOMPATIBLE_MULTIPLICATION: return "Incompatible sizes for matrix multiplication.";
-    case ERROR_INVALID_ROW_OPERATION: return "Invalid row index for row operation.";
+    case ERROR_NONE:                         return "No error.";
+    case ERROR_NULL_MATRIX:                  return "Matrix pointer is null.";
+    case ERROR_NULL_DATA:                    return "Matrix data is null.";
+    case ERROR_NULL_TYPEINFO:                return "Matrix typeInfo is null.";
+    case ERROR_SIZE_MISMATCH:                return "Matrix sizes do not match.";
+    case ERROR_TYPE_MISMATCH:                return "Matrix types do not match.";
+    case ERROR_INCOMPATIBLE_MULTIPLICATION:  return "Incompatible sizes for matrix multiplication.";
+    case ERROR_INVALID_ROW_OPERATION:        return "Invalid row index for row operation.";
+    case ERROR_INVALID_INPUT:                return "Invalid input: must be a positive integer.";
     default: return "Unknown error.";
     }
 }

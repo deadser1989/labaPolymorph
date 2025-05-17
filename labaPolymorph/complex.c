@@ -105,25 +105,17 @@ isSuccess readComplex(void* destination)
 	return SUCCESS;
 }
 
-static struct typeInfo* type = NULL;
-
-const struct typeInfo* getTypeInfoComplex() {
-	if (type == NULL) {
-		type = malloc(sizeof(struct typeInfo));
-		if (type == NULL) {
-			printf("Error: memory allocation failed.\n");
-			exit(1);
-		}
-		type->add = complexAdd;
-		type->multiply = complexMultiply;
-		type->substract = complexSubstract;
-		type->assign = complexAssign;
-		type->swap = complexSwap;
-		type->size = complexGetSize;
-		type->print = complexPrint;
-		type->destroy = freeComplex;
-		type->input = readComplex;
-	}
-
-	return type;
+const TypeInfo* getTypeInfoComplex(void) {
+	static const TypeInfo complexTypeInfo = {
+		.add = complexAdd,
+		.multiply = complexMultiply,
+		.substract = complexSubstract,
+		.assign = complexAssign,
+		.swap = complexSwap,
+		.size = complexGetSize,
+		.print = complexPrint,
+		.destroy = freeComplex,
+		.input = readComplex
+	};
+	return &complexTypeInfo;
 }

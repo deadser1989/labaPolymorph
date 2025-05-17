@@ -56,6 +56,7 @@ void handleMatrixAddition() {
     createNewMatrix(A.rows, A.cols, A.typeInfo, &A);
     readMatrixWithRetry(&A, "A");
 
+    printf("\nMatrix B (rows must be %u, cols must be %u):\n", A.rows, A.cols);
     inputMatrixDimensions(&B.rows, &B.cols);
     B.typeInfo = A.typeInfo;
     createNewMatrix(B.rows, B.cols, B.typeInfo, &B);
