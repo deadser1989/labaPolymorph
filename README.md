@@ -5,6 +5,7 @@ Project description
 ____________________________________________________________________________________________________________
 
 Implementation of a library for working with rectangular matrices in C language supporting basic operations:
+
 - Matrix addition
 - Matrix multiplication
 - Matrix transpose
@@ -19,6 +20,7 @@ Project structure
 ____________________________________________________________________________________________________________
 
 Building
+
 gcc -o matrix input.c error.c double.c complex.c integer.c matrix.c ui.c main.c
 
 matrix
